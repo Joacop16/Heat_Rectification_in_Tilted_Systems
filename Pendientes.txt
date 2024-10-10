@@ -1,0 +1,6 @@
+Heat_Rectification_in_Tilted_Systems
+
+- Escribir código para un sistema pequeño usando las reservas mesoscopicas para buscar rectificación en JE. ✓ -> Está en función de E como parametro.
+- Testear script localmente. ✓ -> Está funcionando.
+- Testear running time total con PSC para saber en que espacio de parametros puedo jugar.
+- Testear si puedo correr Forward and Backward al mismo tiempo en PSC. 
