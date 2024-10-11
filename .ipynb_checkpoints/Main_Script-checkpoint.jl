@@ -100,7 +100,7 @@ GPU = false #Thermal state is faster without GPU
 I_vec = Build_left_vacuum(sites);
 Swap_Gates, TEBD_Gates = Build_Gates(sites, εk, γk, 0*κp, fk_L, εk, γk, 0*κp, fk_R, ε_system, ts, U); #0*Kp_array = no coupling between the lead and the system
 
-NumSteps = 5
+NumSteps = 1000
 @time Thermal_State, observables = Apply_TEBD(I_vec, I_vec, Swap_Gates, TEBD_Gates, NumSteps, maxdim, cutoff, Measurements, Params); 
 println("Thermal State calculated:")
 @show observables.JP_t[end]
@@ -115,10 +115,10 @@ I_vec = gpu(I_vec)
 Swap_Gates, TEBD_Gates = Build_Gates(sites, εk, γk, κp, fk_L, εk, γk, κp, fk_R, ε_system, ts, U, dt);
 
 #TN Parameters
-NumSteps = 5
+NumSteps = 500
 
-# Folder = "/jet/home/penuelap/Heat_rectification_Data/" #PSC
-Folder = "Local_Data/" #Local PC
+Folder = "/jet/home/penuelap/Heat_rectification_Data/" #PSC
+# Folder = "Local_Data/" #Local PC
 
 Name = ARGS[1]*"_E_$E"*"L_$L"
 
