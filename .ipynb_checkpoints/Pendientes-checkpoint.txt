@@ -5,5 +5,7 @@ Heat_Rectification_in_Tilted_Systems
 - Convertir N en un parametro del script para que sea mas fácil cambiar tamaño del sistema. ✓
 - Testear running time total con PSC para saber en que espacio de parametros puedo jugar. ✓
 - Testear si puedo correr Forward and Backward al mismo tiempo en PSC. ✓
+- Hacer un script para crear scripts the slurm y correr esto en CRC usando las gtc 1080 que gastan menos uniaddes de servicio.
+
 
 Hasta ahora no he encontrado nada e igual parecia que si tenía convergencia. Parece que ahora debo aumentar numsteps, el último que corri es: julia Main_Script.jl Forward 6 4.0 & julia Main_Script.jl Reverse 6 4.0

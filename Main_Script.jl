@@ -58,7 +58,7 @@ fk_L, fk_R = fk_arrays(εk, εk);
 
 #System Parameters
 D = parse(Int64,ARGS[2])
-U = 1.2*ts
+U = 2.0*ts
 E = parse(Float64,ARGS[3])
 μ = -E*(D+1)/4
 
@@ -115,7 +115,7 @@ I_vec = gpu(I_vec)
 Swap_Gates, TEBD_Gates = Build_Gates(sites, εk, γk, κp, fk_L, εk, γk, κp, fk_R, ε_system, ts, U, dt);
 
 #TN Parameters
-NumSteps = 1000
+NumSteps = 500
 
 Folder = "/jet/home/penuelap/Heat_rectification_Data/" #PSC
 # Folder = "Local_Data/" #Local PC
