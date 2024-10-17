@@ -57,9 +57,9 @@ L, R = 10, 10
 fk_L, fk_R = fk_arrays(εk, εk);
 
 #System Parameters
-D = 2
+D = parse(Int64,ARGS[2])
 U = 1.2*ts
-E = parse(Float64,ARGS[2])
+E = parse(Float64,ARGS[3])
 μ = -E*(D+1)/4
 
 ε_system = [(μ+0.5E*j) for j =1:D]; #Tilted system energies
@@ -115,11 +115,13 @@ I_vec = gpu(I_vec)
 Swap_Gates, TEBD_Gates = Build_Gates(sites, εk, γk, κp, fk_L, εk, γk, κp, fk_R, ε_system, ts, U, dt);
 
 #TN Parameters
-NumSteps = 500
+NumSteps = 1000
 
 Folder = "/jet/home/penuelap/Heat_rectification_Data/" #PSC
 # Folder = "Local_Data/" #Local PC
 
-Name = ARGS[1]*"_E_$E"*"L_$L"
+Name = ARGS[1]*"_E=$E"*"_L=$L"*"_D=$D"
 
 @time NESS, observables = Apply_TEBD(Thermal_State, I_vec, Swap_Gates, TEBD_Gates, NumSteps, maxdim, cutoff, Measurements, Params, Folder*Name); #maxdim = 40 by default
+
+println("Name Completed. JE = $(observables.JE_t[end]) and JP = $(observables.JP_t[end])")
