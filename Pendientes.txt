@@ -2,5 +2,5 @@ Heat_Rectification_in_Tilted_Systems L1 M1 Mi1 J1 V1 L2 M2 Mi2 J2 V2
 
 - Hacer un script para crear scripts de slurm y correr esto en CRC usando las gtx 1080 que gastan menos unidades de servicio. M1
 - Revisar cuanto cuesta la GPU en ambos servidores y tratar de hacer cuenta respecto a que tanto es más costoso usar GPU. Pues revisar un poco mejor esa relación costo/beneficio. M1
-- Quedarme con D = 2 y D =  4 y aumentar la diferencia de temperatura bastante bastante más. V1
+- Quedarme con D = 2 y D =  4 y aumentar la diferencia de temperatura bastante bastante más, tambien aumentar interacción a 2ts. V1
 - Tratar de hacer un barrido más continuo, algo asi como E = [0, 5] con pasos de 0.2 o menos. V1
