@@ -1,10 +1,7 @@
 #First Run
 
-GitHub_repository_path = pwd()*"/TN_Superfermionic_Mesoscopic_Leads"
-include("/Code/Interacting_functions.jl")
-
-precompile_package(GitHub_repository_path, false) #GPU = false
-precompile_package(GitHub_repository_path, true) #GPU = true
+GitHub_repository_path = "/ihome/jmendoza-arenas/jop204/Heat_Rectification_in_Tilted_Systems/TN_Superfermionic_Mesoscopic_Leads"
+include(GitHub_repository_path*"/Code/Interacting_functions.jl")
 
 using LinearAlgebra
 using FlexiMaps
@@ -40,7 +37,7 @@ function Logarithmic_linear_arrays(L, J)
 end
 
 #Global variables by default
-μ_L, μ_R = 0, 0 #As we want to focus in Heat rectification, we should not have gradient of chemical potential.
+μ_L, μ_R = 0.0, 0.0 #As we want to focus in Heat rectification, we should not have gradient of chemical potential.
 ts = (W/8)
 
 function fk_arrays(εk_array_L, εk_array_R)
@@ -98,7 +95,10 @@ Params = Params_for_Measurements(Percentage_for_measurement, εk, γk, κp, fk_L
 #     Psi_t, observables = Apply_TEBD(I_vec, I_vec, TEBD_Gates, NumSteps, maxdim, cutoff, Measurements, Params); #maxdim = 40 by default
 # end
 
-println("First run completed.")
+# println("First run completed.")
+
+precompile_package(GitHub_repository_path, false) #GPU = false
+precompile_package(GitHub_repository_path, true) #GPU = true
 #------------------------------------------------------------------ Real code ------------------------------------------------------------------  
 PRINT = true
 GPU = false #Thermal state is faster without GPU
@@ -122,8 +122,9 @@ Swap_Gates, TEBD_Gates = Build_Gates(sites, εk, γk, κp, fk_L, εk, γk, κp, 
 #TN Parameters
 NumSteps = 1000
 
-Folder = "/jet/home/penuelap/Heat_rectification_Data/" #PSC
+# Folder = "/jet/home/penuelap/Heat_rectification_Data/" #PSC
 # Folder = "Local_Data/" #Local PC
+Folder = "/ihome/jmendoza-arenas/jop204/Heat_Rectification_Data/" #CRC
 
 Name = ARGS[1]*"_E=$E"*"_L=$L"*"_D=$D"
 
