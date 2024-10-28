@@ -4,3 +4,4 @@ Heat_Rectification_in_Tilted_Systems L M Mi J V
 - Quedarme con D = 2 y D =  4 y aumentar la diferencia de temperatura bastante bastante más, tambien aumentar interacción a 2ts. ✓
 - Hacer un script para crear scripts de slurm y correr esto en CRC usando las gtx 1080 que gastan menos unidades de servicio. ✓
 - Tratar de hacer un barrido más continuo, algo asi como E = [0, 5] con pasos de 0.2 o menos. ✓ -> Si se trata de observar rectificación un poco pequeña pero si parece que hay un pico cerca a E = 2.6 en D = 4. Puede valer la pena hacer un barrido mas discreto en ese intervalo. Entre 2.5 y 2.7 otros 100 pasos. 
+- Quizá vale la pena probar distintos Γ en cada lado, el libro decía que era importante esa asimetría entre los acoples.
