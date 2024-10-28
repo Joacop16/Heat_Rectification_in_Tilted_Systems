@@ -14,11 +14,11 @@ for Bias in ["Forward", "Reverse"]:
             lines.append(f"#SBATCH --job-name=Heat_Rect_Mesos_{Bias}_D={D}_E={E_value}")
             lines.append("#SBATCH --gres=gpu:1")
             lines.append("#SBATCH --clusters=gpu")
-#             lines.append("#SBATCH --partition=gtx1080")
-            lines.append("#SBATCH --partition=a100")
+            lines.append("#SBATCH --partition=gtx1080") #11GB of GPU
+#            lines.append("#SBATCH --partition=a100") #40 GB of GPU
             lines.append("#SBATCH --nodes=1")
             lines.append("#SBATCH --cores=1") #For finding the thermal state we need CPU, everything else can be done in the GPU
-            lines.append("#SBATCH --time=0-1:00:00") #1 Hour. It should not take more than one hour.
+            lines.append("#SBATCH --time=0-2:00:00") #2 Hour. It should not take more than one hour, but I put 2 just in case
             lines.append("#SBATCH --qos=short") 
             lines.append("#SBATCH --mail-user=jop204@pitt.edu") 
             lines.append("#SBATCH --mail-type=END,FAIL") 
@@ -30,7 +30,7 @@ for Bias in ["Forward", "Reverse"]:
             for i in range(1,len(lines)): script.write('\n' + lines[i])
             script.close()
             
-#             os.system(f"sbatch Scripts/Heat_Rect_Mesos_{Bias}_D={D}_E={E_value}.slurm")
+            os.system(f"sbatch Scripts/Heat_Rect_Mesos_{Bias}_D={D}_E={E_value}.slurm")
             
-# os.system("sbatch Scripts/Heat_Rect_Mesos_Forward_D=2_E=0.0.slurm")
-# os.system('rm -rf Scripts')
+# os.system("sbatch Scripts/Heat_Rect_Mesos_Forward_D=2_E=0.0.slurm") #For testing
+os.system('rm -rf Scripts')
