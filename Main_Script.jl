@@ -49,9 +49,9 @@ function fk_arrays(εk_array_L, εk_array_R)
 end
 
 if ARGS[1] == "Forward" 
-    β_L, β_R = 1/(100*ts), 1/(1*ts) #Forward Bias: TL > TR
+    β_L, β_R = 1/(1000*ts), 1/(1*ts) #Forward Bias: TL > TR
 else
-    β_L, β_R = 1/(1*ts), 1/(100*ts) #Reverse Bias: TL < TR
+    β_L, β_R = 1/(1*ts), 1/(1000*ts) #Reverse Bias: TL < TR
 end
 
 #Lead Parameters
