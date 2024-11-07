@@ -120,7 +120,7 @@ I_vec = gpu(I_vec)
 Swap_Gates, TEBD_Gates = Build_Gates(sites, εk, γk, κp, fk_L, εk, γk, κp, fk_R, ε_system, ts, U, dt);
 
 #TN Parameters
-NumSteps = 1000
+NumSteps = 1500
 
 # Folder = "/jet/home/penuelap/Heat_rectification_Data/" #PSC
 # Folder = "Local_Data/" #Local PC
