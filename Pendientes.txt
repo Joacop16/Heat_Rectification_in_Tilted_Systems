@@ -1,8 +1,9 @@
-Heat_Rectification_in_Tilted_Systems
+Heat_Rectification_in_Tilted_Systems L M Mi J V
 
-- Reproducir resultados del apéndice del artículo de Juan José donde usan las reservas para sistemas pequeños.
-- Hacer graficas de los niveles de energía en cada sitio para empezar a pensar un poco más en canales niveles y ventana de Bias.
-- Leer artículos que JJ va a enviar para entender un poco más la naturaleza de como rectifican la energía usando ruido, quizá se puede hacer simplemente moviendo los niveles.
-- Revisar bien cuando F o R son el máximo o el mínimo.
-- Correr para E más grandes a ver que más sucede.
+- Leer apéndice Giant rectification para entender que hicieron de las reservas. L
+- Reproducir resultados del apéndice del artículo de Juan José donde usan las reservas para sistemas pequeños. M Mi J
+- Correr para E más grandes a ver que más sucede. M
+- Hacer graficas de los niveles de energía en cada sitio para empezar a pensar un poco más en canales niveles y ventana de Bias. Mi
+- Leer artículos que JJ va a enviar para entender un poco más la naturaleza de como rectifican la energía usando ruido, quizá se puede hacer simplemente moviendo los niveles. Mi
+- Revisar bien cuando F o R son el máximo o el mínimo. Mi J
 - Quizá vale la pena probar distintos Γ en cada lado, el libro decía que era importante esa asimetría entre los acoples. (aún no)
