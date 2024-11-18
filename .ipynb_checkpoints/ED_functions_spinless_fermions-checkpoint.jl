@@ -11,6 +11,8 @@ Identity = [1 0; 0 1]; #or Using LinearAlgebra and Matrix{Float64}(I, 2, 2)
 
 #Note 1: These functions build all the operators multiplying ⊗ at the right. The basis and everything should follow this convention.
 
+function Basis_Element_j(N, j)
+
 function Enlarge_Matrix_site_j(N, j, matrix)
     # I⊗...⊗I⊗M⊗I...⊗I
 
