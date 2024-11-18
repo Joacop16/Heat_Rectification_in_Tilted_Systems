@@ -61,7 +61,7 @@ fk_L, fk_R = fk_arrays(εk, εk);
 
 #System Parameters
 D = parse(Int64,ARGS[2])
-U = 2.5*ts
+U = 10.0*ts
 E = parse(Float64,ARGS[3])
 μ = -E*(D+1)/4
 
