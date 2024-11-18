@@ -1,10 +1,10 @@
 Heat_Rectification_in_Tilted_Systems L M Mi J V
 
 - Leer apéndice Giant rectification para entender que hicieron de las reservas. ✓ -> Lo hicieron de forma exacta, asi que pudieron usar exactamente los mismos parámetros interacciones y todo.
-- Hacer graficas de los niveles de energía en cada sitio para empezar a pensar un poco más en canales niveles y ventana de Bias. L
-- Revisar bien cuando F o R son el máximo o el mínimo en las gráficas que ya tengo. L
+- Hacer graficas de los niveles de energía en cada sitio para empezar a pensar un poco más en canales niveles y ventana de Bias. ✓ -> Creo que es importante empezar a usar distintos niveles de energia para cada lead. Eso hacen en el apendice y yo no lo estaba haciendo.
 - Correr con U = 10 ya que ese es el correspondiente a Δ = 5. L
-- Reproducir resultados del apéndice del artículo de Juan José donde usan las reservas para sistemas pequeños. L -> Dado que no tengo la misma interacción y ya probe que eso afecta un poco los resultados, no sé hasta que punto se puedan reproducir sin cambiar mucho el código de las reservas, quizá puedo llegar a algo similar.
+- Revisar bien cuando F o R son el máximo o el mínimo en las gráficas que ya tengo. L
+- Reproducir resultados del apéndice del artículo de Juan José donde usan las reservas para sistemas pequeños. L -> Dado que no tengo la misma interacción y ya probe que eso afecta un poco los resultados, no sé hasta que punto se puedan reproducir sin cambiar mucho el código de las reservas, quizá puedo llegar a algo similar. Haciendo pruebas, creo que basta con hacer un shift en las energias de cada sitio, sin embargo, así no parece que realmente tenemos un tilt potential.
 - Correr con para E más grandes a ver que más sucede. Mi
 
 - Leer artículos que JJ va a enviar para entender un poco más la naturaleza de como rectifican la energía usando ruido, quizá se puede hacer simplemente moviendo los niveles. M
