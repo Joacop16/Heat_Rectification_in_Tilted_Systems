@@ -30,7 +30,7 @@ for Bias in ["Forward", "Reverse"]:
             for i in range(1,len(lines)): script.write('\n' + lines[i])
             script.close()
             
-#             os.system(f"sbatch Scripts/Heat_Rect_Mesos_{Bias}_D={D}_E={E_value}.slurm")
+            os.system(f"sbatch Scripts/Heat_Rect_Mesos_{Bias}_D={D}_E={E_value}.slurm")
             
-os.system("sbatch Scripts/Heat_Rect_Mesos_Reverse_D=4_E=0.0.slurm") #For testing
+# os.system("sbatch Scripts/Heat_Rect_Mesos_Reverse_D=4_E=0.0.slurm") #For testing
 os.system('rm -rf Scripts')
