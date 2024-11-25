@@ -1,13 +1,7 @@
 Heat_Rectification_in_Tilted_Systems L M Mi J V
 
-- Leer apéndice Giant rectification para entender que hicieron de las reservas. ✓ -> Lo hicieron de forma exacta, asi que pudieron usar exactamente los mismos parámetros interacciones y todo.
-- Hacer graficas de los niveles de energía en cada sitio para empezar a pensar un poco más en canales niveles y ventana de Bias. ✓ -> Creo que es importante empezar a usar distintos niveles de energia para cada lead. Eso hacen en el apendice y yo no lo estaba haciendo.
-- Correr con U = 10 ya que ese es el correspondiente a Δ = 5. ✓ -> Ahora si hay un R = 4 al menos, sigue siendo pequeño, pero quizá vale la pena correr para un rango mas grande de E o incluso in caso más continuo cerca de donde parece que hay un pico.
-- Revisar bien cuando F o R son el máximo o el mínimo en las gráficas que ya tengo. ✓ -> Normalmente para JE siempre reverse es mayor, sin embargo, para JP esto no siempre es cierto.
-- Correr con para E más grandes a ver que más sucede. ✓ -> Hay un pico entre 4 y 6, creo que vale la pena hacer un calculo mas continuo en ese intervalo, en adición a eso, pareciera que la diferencia entre forward y reverse es que en uno el primer sitio del sistema parece que se va llenando más rapido (ver bien como van cambiando las ocupaciones).
-- Reproducir resultados del apéndice del artículo de Juan José donde usan las reservas para sistemas pequeños. Mi -> Dado que no tengo la misma interacción y ya probe que eso afecta un poco los resultados, no sé hasta que punto se puedan reproducir sin cambiar mucho el código de las reservas, quizá puedo llegar a algo similar. Haciendo pruebas, creo que basta con hacer un shift en las energias de cada sitio, sin embargo, así no parece que realmente tenemos un tilt potential.
-- Hacer diapositivas para reunión con Zwolak.
-
+- Correr con para E más continuos entre 4 y 6. L
+- Reproducir resultados del apéndice del artículo de Juan José donde usan las reservas para sistemas pequeños. L -> Dado que no tengo la misma interacción y ya probe que eso afecta un poco los resultados, no sé hasta que punto se puedan reproducir sin cambiar mucho el código de las reservas, quizá puedo llegar a algo similar. Haciendo pruebas, creo que basta con hacer un shift en las energias de cada sitio, sin embargo, así no parece que realmente tenemos un tilt potential. -> Juan José dijo que si debería funcionar shifteando los niveles de energía. También le pregunte porque se demoraba tanto mi código y dijo que al menos en uno de los dos bias era un estado aislante así que requeria un tiempo exponencial para converger.
 - Leer artículos que JJ va a enviar para entender un poco más la naturaleza de como rectifican la energía usando ruido, quizá se puede hacer simplemente moviendo los niveles. M
-- Leer borrador de la propuesta de Juan José para tratar de buscar referencias sobre que tan factible es de hacer experimentalmente lo que sea que hagamos. Mi
+- Buscar referencias sobre que tan factible es hacer experimentalmente lo que sea que hagamos, buscar tricalcogenuros de metales de transición, cupratos, etc. Cualquier amterial que se pueda explicar por un modelo de hubbard o un XXZ. Mi
 - Quizá vale la pena probar distintos Γ en cada lado, el libro decía que era importante esa asimetría entre los acoples. (aún no)
