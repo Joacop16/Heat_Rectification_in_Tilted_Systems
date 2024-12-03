@@ -1,7 +1,12 @@
-Heat_Rectification_in_Tilted_Systems L M Mi J V
+Heat_Rectification_in_Tilted_Systems L M 
 
-- Correr con para E más continuos entre 4 y 6. L
-- Reproducir resultados del apéndice del artículo de Juan José donde usan las reservas para sistemas pequeños. L -> Dado que no tengo la misma interacción y ya probe que eso afecta un poco los resultados, no sé hasta que punto se puedan reproducir sin cambiar mucho el código de las reservas, quizá puedo llegar a algo similar. Haciendo pruebas, creo que basta con hacer un shift en las energias de cada sitio, sin embargo, así no parece que realmente tenemos un tilt potential. -> Juan José dijo que si debería funcionar shifteando los niveles de energía. También le pregunte porque se demoraba tanto mi código y dijo que al menos en uno de los dos bias era un estado aislante así que requeria un tiempo exponencial para converger.
+- Correr con para E más continuos entre 4 y 6. L ✓ -> Está corriendo (debería estar para la reunión de mañana).
+- Graficar no solo la ocupación, sino también la energía al final, i.e. (ocupación*energía). ✓
+- Reproducir resultados del apéndice del artículo de Juan José donde usan las reservas para sistemas pequeños. 
+    - Extraer datos del artículo. ✓
+    - Primera versión no funciono también es importante incrementar bastante la cantidad de pasos para el reverse bias (forward parece estar decente). -> Segundo intento tampoco funciono.
 - Leer artículos que JJ va a enviar para entender un poco más la naturaleza de como rectifican la energía usando ruido, quizá se puede hacer simplemente moviendo los niveles. M
-- Buscar referencias sobre que tan factible es de hacer experimentalmente lo que sea que hagamos. Mi
+- Anotar todas las ideas que saque de los artículos. M
+- Buscar referencias sobre que tan factible es hacer experimentalmente lo que sea que hagamos, buscar tricalcogenuros de metales de transición, cupratos, etc. Cualquier amterial que se pueda explicar por un modelo de hubbard, xxz o tj. L M
+
 - Quizá vale la pena probar distintos Γ en cada lado, el libro decía que era importante esa asimetría entre los acoples. (aún no)
