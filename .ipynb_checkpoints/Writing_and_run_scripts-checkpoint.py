@@ -3,10 +3,10 @@ import numpy as np
 import os
 os.system("mkdir Scripts")
 
-for Bias in ["Forward", "Reverse"]:
-    for D in [6, 8]:
-        # for E in  np.arange(0.0,5,0.2):
-        for E in  np.arange(0.0,10.0,0.2):
+for D in [6, 8]:
+    # for E in  np.arange(0.0,5,0.2):
+    for E in  np.arange(0.0,10.0,0.2):
+        for Bias in ["Forward", "Reverse"]:
             E_value = str(E)[0:3]
 
             lines = []
