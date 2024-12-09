@@ -11,11 +11,11 @@ for D in [4]:
             lines = []
 
             lines.append("#!/bin/bash")
-            lines.append(f"#SBATCH --job-name=Heat_Rect_Mesos_{Bias}_D={D}_E={E_value}")
+            lines.append(f"#SBATCH --job-name=Heat_Rect_Mesos_{Bias}_D={D}_E={E_value}_L30")
             lines.append("#SBATCH --gres=gpu:1")
             lines.append("#SBATCH --clusters=gpu")
             # lines.append("#SBATCH --partition=gtx1080") #11GB of GPU
-            lines.append("#SBATCH --partition=l40s") #48 GB of GPU
+            lines.append("#SBATCH --partition=a100") #48 GB of GPU
             lines.append("#SBATCH --nodes=1")
             lines.append("#SBATCH --cores=1") #For finding the thermal state we need CPU, everything else can be done in the GPU
             lines.append(f"#SBATCH --time=0-24:00:00")
