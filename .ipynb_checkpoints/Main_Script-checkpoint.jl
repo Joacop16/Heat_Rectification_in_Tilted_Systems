@@ -3,12 +3,24 @@
 GitHub_repository_path = "/ihome/jmendoza-arenas/jop204/Heat_Rectification_in_Tilted_Systems/TN_Superfermionic_Mesoscopic_Leads"
 include(GitHub_repository_path*"/Code/Interacting_functions.jl")
 
+precompile_package(GitHub_repository_path, false) #GPU = false
+precompile_package(GitHub_repository_path, true) #GPU = true
+
 using LinearAlgebra
 using FlexiMaps
 
-W = 8.0
-Γ = W/8
-J(ω) = abs(ω) <= abs(W) ? Γ : 0 #Spectral density Γ = W/8 in this case
+# W = 8.0 #8 for D = 4, 14 for D = 6 and 18 for D = 8
+
+D = parse(Int64,ARGS[2])
+
+D == 4 ? W = 8.0 : nothing
+D == 6 ? W = 14.0 : nothing
+D == 8 ? W = 18.0 : nothing
+
+@show W
+
+Γ = 1.0
+J(ω) = abs(ω) <= abs(W) ? Γ : 0 #Spectral density Γ = 1.0 in this case
 
 function Logarithmic_linear_arrays(L, J)
     #L: lead size
@@ -38,7 +50,7 @@ end
 
 #Global variables by default
 μ_L, μ_R = 0.0, 0.0 #As we want to focus in Heat rectification, we should not have gradient of chemical potential.
-ts = (W/8)
+ts = 1.0
 
 function fk_arrays(εk_array_L, εk_array_R)
     
@@ -55,12 +67,16 @@ else
 end
 
 #Lead Parameters
-L, R = 10, 10
+
+D == 4 ? L = 10 : nothing
+D == 6 ? W = 12 : nothing
+D == 8 ? W = 14 : nothing
+R = L
+
 εk, γk, κp = Logarithmic_linear_arrays(L, J)
 fk_L, fk_R = fk_arrays(εk, εk);
 
 #System Parameters
-D = parse(Int64,ARGS[2])
 U = 10.0*ts
 E = parse(Float64,ARGS[3])
 μ = -E*(D+1)/4
@@ -72,34 +88,13 @@ M = L + D + R
 sites = siteinds("S=1/2",2*M)
 
 dt = 0.05
-maxdim = 80
+maxdim = 100
 cutoff = 10e-12
 Measurements = ["JP", "JE"]
 
 Percentage_for_measurement = 1.0
 Params = Params_for_Measurements(Percentage_for_measurement, εk, γk, κp, fk_L, εk, γk, κp, fk_R, ε_system, ts, U, dt);
 
-#------------------------------------------------------------------ First run ------------------------------------------------------------------ 
-# PRINT = false
-
-# for GPU_value = [true, false]
-#     global GPU = GPU_value
-
-#     Measurements = ["Occupation", "JP", "JE"]
-#     NumSteps = 5    
-#     maxdim = 40
-#     cutoff = 10e-12
-    
-#     I_vec = Build_left_vacuum(sites);
-#     Swap_Gates, TEBD_Gates = Build_Gates(sites, εk, γk, 0*κp, fk_L, εk, γk, 0*κp, fk_R, ε_system, ts, U); #0*κp no coupling between the lead and the system
-#     Psi_t, observables = Apply_TEBD(I_vec, I_vec, TEBD_Gates, NumSteps, maxdim, cutoff, Measurements, Params); #maxdim = 40 by default
-# end
-
-# println("First run completed.")
-
-precompile_package(GitHub_repository_path, false) #GPU = false
-precompile_package(GitHub_repository_path, true) #GPU = true
-#------------------------------------------------------------------ Real code ------------------------------------------------------------------  
 PRINT = true
 GPU = false #Thermal state is faster without GPU
 
@@ -120,7 +115,7 @@ I_vec = gpu(I_vec)
 Swap_Gates, TEBD_Gates = Build_Gates(sites, εk, γk, κp, fk_L, εk, γk, κp, fk_R, ε_system, ts, U, dt);
 
 #TN Parameters
-NumSteps = 1500
+NumSteps = 2000
 
 # Folder = "/jet/home/penuelap/Heat_rectification_Data/" #PSC
 # Folder = "Local_Data/" #Local PC
