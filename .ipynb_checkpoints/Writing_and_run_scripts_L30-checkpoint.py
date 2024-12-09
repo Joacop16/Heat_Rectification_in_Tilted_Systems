@@ -6,7 +6,7 @@ os.system("mkdir Scripts")
 for D in [4]:
     for E in  np.array([2.5, 4.25, 7.5]):
         for Bias in ["Forward", "Reverse"]:
-            E_value = str(E)[0:3]
+            E_value = str(E)[0:5]
 
             lines = []
 
