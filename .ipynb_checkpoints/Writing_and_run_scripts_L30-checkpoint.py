@@ -15,7 +15,7 @@ for D in [4]:
             lines.append("#SBATCH --gres=gpu:1")
             lines.append("#SBATCH --clusters=gpu")
             # lines.append("#SBATCH --partition=gtx1080") #11GB of GPU
-           lines.append("#SBATCH --partition=l40s") #48 GB of GPU
+            lines.append("#SBATCH --partition=l40s") #48 GB of GPU
             lines.append("#SBATCH --nodes=1")
             lines.append("#SBATCH --cores=1") #For finding the thermal state we need CPU, everything else can be done in the GPU
             lines.append(f"#SBATCH --time=0-24:00:00")
