@@ -69,8 +69,8 @@ end
 #Lead Parameters
 
 D == 4 ? L = 10 : nothing
-D == 6 ? W = 12 : nothing
-D == 8 ? W = 14 : nothing
+D == 6 ? L = 12 : nothing
+D == 8 ? L = 14 : nothing
 R = L
 
 εk, γk, κp = Logarithmic_linear_arrays(L, J)
