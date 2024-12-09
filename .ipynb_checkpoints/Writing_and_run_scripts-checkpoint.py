@@ -19,7 +19,7 @@ for D in [6, 8]:
 #            lines.append("#SBATCH --partition=a100") #40 GB of GPU
             lines.append("#SBATCH --nodes=1")
             lines.append("#SBATCH --cores=1") #For finding the thermal state we need CPU, everything else can be done in the GPU
-            lines.append(f"#SBATCH --time=0-{D/2}:00:00") #2 Hour. It should not take more than one hour, but I put 2 just in case
+            lines.append(f"#SBATCH --time=0-{round(D/2)}:00:00") #2 Hour. It should not take more than one hour, but I put 2 just in case
             lines.append("#SBATCH --qos=short") 
             lines.append("#SBATCH --mail-user=jop204@pitt.edu") 
             lines.append("#SBATCH --mail-type=END,FAIL") 
